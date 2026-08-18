@@ -26,7 +26,8 @@ export interface Service {
 }
 
 // const API_URL = 'http://127.0.0.1:8000/api'
-const API_URL = 'https://nutrition-planner-km7q.onrender.com/api'
+// const API_URL = 'https://nutrition-planner-km7q.onrender.com/api'
+const API_URL = import.meta.env.VITE_API_URL
 
 export async function getLandingPage(): Promise<LandingPage> {
   const response = await fetch(`${API_URL}/landing-page/`)
