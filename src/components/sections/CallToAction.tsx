@@ -1,4 +1,4 @@
-import { siteConfig, images } from '../../config/site'
+import {  images } from '../../config/site'
 import type { LandingPage } from '../../api/landing'
 import { Button } from '../ui/Button'
 import {
@@ -12,7 +12,7 @@ interface CallToActionProps {
 }
 
 export function CallToAction({ data }: CallToActionProps) {
-  const { contact } = siteConfig
+  // const { contact } = siteConfig
 
   const phone = data.phone
   const email = data.email

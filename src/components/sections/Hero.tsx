@@ -1,4 +1,4 @@
-import { siteConfig, images } from '../../config/site'
+import {  images } from '../../config/site'
 import type { LandingPage } from '../../api/landing'
 import { Button } from '../ui/Button'
 import { ArrowRightIcon } from '../icons/Icons'
