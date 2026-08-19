@@ -102,13 +102,19 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Clean configuration handling both local and production defaults seamlessly
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.environ.get(
         "CORS_ALLOWED_ORIGINS",
-        "http://localhost:5173",
+        "http://localhost:5173,https://my-landingpage-omega.vercel.app"
     ).split(",")
     if origin.strip()
+]
+
+# Add this regex block right below to automatically handle Vercel's preview deployment URLs
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
