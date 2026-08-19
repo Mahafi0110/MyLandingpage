@@ -1,4 +1,3 @@
-# Replace `backend/config/settings.py` with this
 import os
 from pathlib import Path
 import dj_database_url
@@ -102,12 +101,12 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Clean configuration handling both local and production defaults seamlessly
+# Clean configuration handling local, Vercel, and Render frontends seamlessly (NO trailing slashes)
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.environ.get(
         "CORS_ALLOWED_ORIGINS",
-        "http://localhost:5173,https://my-landingpage-omega.vercel.app"
+        "http://localhost:5173,https://my-landingpage-omega.vercel.app,https://mylandingpage-s1g3.onrender.com"
     ).split(",")
     if origin.strip()
 ]
